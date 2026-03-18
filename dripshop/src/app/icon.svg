@@ -1,0 +1,11 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="256" cy="256" r="256" fill="black" />
+  <g fill="white">
+    <!-- Simplified "DS" geometry representation -->
+    <path d="M140 100 h60 v100 l120 -100 h60 v300 l-60 -40 v-120 l-120 100 h-60 z" />
+    <path d="M180 180 h150 v150 h-150 z" opacity="0.3" />
+    <text x="256" y="278" font-family="sans-serif" font-weight="900" font-size="240" fill="white" text-anchor="middle" dominant-baseline="central" letter-spacing="-10">DS</text>
+  </g>
+  <rect width="512" height="512" fill="black" />
+  <text x="256" y="278" font-family="'Space Grotesk', 'Outfit', system-ui, sans-serif" font-weight="900" font-size="280" fill="white" text-anchor="middle" dominant-baseline="central" letter-spacing="-20">DS</text>
+</svg>

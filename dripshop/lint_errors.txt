@@ -1,0 +1,189 @@
+
+> dripshop@0.1.0 lint
+> eslint
+
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\admin\categorias-destaque\page.tsx
+  293:41  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  386:41  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\admin\categorias\page.tsx
+  4:36  warning  'X' is defined but never used           @typescript-eslint/no-unused-vars
+  4:45  warning  'FolderOpen' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\admin\clientes\page.tsx
+  4:58  warning  'Eye' is defined but never used    @typescript-eslint/no-unused-vars
+  4:63  warning  'Edit2' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\admin\colecoes\page.tsx
+    4:43  warning  'X' is defined but never used                                                                                                                                                                                                                                                            @typescript-eslint/no-unused-vars
+  195:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\admin\configuracoes\page.tsx
+   5:5   warning  'Settings' is defined but never used      @typescript-eslint/no-unused-vars
+   5:31  warning  'Shield' is defined but never used        @typescript-eslint/no-unused-vars
+   5:39  warning  'CreditCard' is defined but never used    @typescript-eslint/no-unused-vars
+   6:11  warning  'Globe' is defined but never used         @typescript-eslint/no-unused-vars
+   6:50  warning  'Phone' is defined but never used         @typescript-eslint/no-unused-vars
+   6:57  warning  'MapPin' is defined but never used        @typescript-eslint/no-unused-vars
+  37:49  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\admin\layout.tsx
+  9:19  warning  'TrendingUp' is defined but never used   @typescript-eslint/no-unused-vars
+  9:31  warning  'DollarSign' is defined but never used   @typescript-eslint/no-unused-vars
+  9:43  warning  'ShoppingBag' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\admin\page.tsx
+   30:71  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                 @typescript-eslint/no-explicit-any
+  174:37  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\admin\pedidos\page.tsx
+    4:18   warning  'Eye' is defined but never used                                                                                                                                                                                                                                                          @typescript-eslint/no-unused-vars
+    4:106  warning  'Check' is defined but never used                                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+  300:25   warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\admin\produtos\page.tsx
+    3:20   warning  'useEffect' is defined but never used                                                                                                                                                                                                                                                    @typescript-eslint/no-unused-vars
+    4:39   warning  'Eye' is defined but never used                                                                                                                                                                                                                                                          @typescript-eslint/no-unused-vars
+    4:52   warning  'MoreHorizontal' is defined but never used                                                                                                                                                                                                                                               @typescript-eslint/no-unused-vars
+    4:101  warning  'ImageIcon' is defined but never used                                                                                                                                                                                                                                                    @typescript-eslint/no-unused-vars
+    7:35   warning  'creators' is defined but never used                                                                                                                                                                                                                                                     @typescript-eslint/no-unused-vars
+    9:7    warning  'statusColors' is assigned a value but never used                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+   15:21   warning  'addProduct' is assigned a value but never used                                                                                                                                                                                                                                          @typescript-eslint/no-unused-vars
+   15:33   warning  'updateProduct' is assigned a value but never used                                                                                                                                                                                                                                       @typescript-eslint/no-unused-vars
+  217:25   warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  472:17   warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\api\cart\route.ts
+  3:10  warning  'addToCartSchema' is defined but never used       @typescript-eslint/no-unused-vars
+  3:27  warning  'updateCartItemSchema' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\api\categories\route.ts
+  6:27  warning  'request' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\api\collections\route.ts
+  6:27  warning  'request' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\api\products\new\route.ts
+  5:27  warning  'request' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\api\products\route.ts
+  3:31  warning  'updateProductSchema' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\api\products\sale\route.ts
+  5:27  warning  'request' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\artista\[slug]\page.tsx
+  34:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\carrinho\page.tsx
+  73:37  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\categoria\[slug]\page.tsx
+  2:33  warning  'products' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\checkout\page.tsx
+  324:45  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\checkout\sucesso\page.tsx
+  4:32  warning  'ArrowRight' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      @typescript-eslint/no-unused-vars
+  7:32  error    Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\checkout\sucesso\page.tsx:7:32
+   5 |
+   6 | export default function CheckoutSucessoPage() {
+>  7 |     const orderNumber = `DRP-${Date.now().toString().slice(-8)}`;
+     |                                ^^^^^^^^^^ Cannot call impure function
+   8 |
+   9 |     return (
+  10 |         <div className="min-h-screen bg-gray-50 flex items-center justify-center p-8">  react-hooks/purity
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\colecao\[slug]\page.tsx
+  2:35  warning  'products' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\colecoes\page.tsx
+  28:19  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\conta\favoritos\page.tsx
+   4:30  warning  'ArrowRight' is defined but never used                                                                                                                                                                                                                                                   @typescript-eslint/no-unused-vars
+  54:41  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\conta\layout.tsx
+  3:10  warning  'useState' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\conta\pedidos\page.tsx
+    4:19  warning  'Eye' is defined but never used                                                                                                                                                                                                                                                          @typescript-eslint/no-unused-vars
+  117:61  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\p\fale-conosco\page.tsx
+  2:38  warning  'MapPin' is defined but never used  @typescript-eslint/no-unused-vars
+  2:46  warning  'Clock' is defined but never used   @typescript-eslint/no-unused-vars
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\p\trocas\page.tsx
+  43:43  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  43:56  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\page.tsx
+   30:9   warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  136:17  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\parceiros\page.tsx
+  30:21  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\produto\[slug]\page.tsx
+   6:92  warning  'Check' is defined but never used                                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+  84:21  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+  94:19  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\app\recuperar-senha\page.tsx
+  27:21  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\components\cart\CartDrawer.tsx
+  47:21  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\components\home\FeaturedCategories.tsx
+  59:29  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\components\layout\Header.tsx
+   7:23  warning  'categories' is defined but never used                                                                                                                                                                                                                                                   @typescript-eslint/no-unused-vars
+  35:13  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\components\layout\LayoutShell.tsx
+  16:11  warning  'showShopShell' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\components\layout\SearchModal.tsx
+  75:21  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\components\product\ProductCard.tsx
+   4:17  warning  'ShoppingCart' is defined but never used                                                                                                                                                                                                                                                 @typescript-eslint/no-unused-vars
+   4:31  warning  'Eye' is defined but never used                                                                                                                                                                                                                                                          @typescript-eslint/no-unused-vars
+  51:11  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\lib\data\categories.ts
+  1:41  warning  'Product' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\lib\services\order.service.ts
+  4:10  warning  'Prisma' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\lib\services\user.service.ts
+    2:59  warning  'ValidationError' is defined but never used    @typescript-eslint/no-unused-vars
+   19:13  warning  'password' is assigned a value but never used  @typescript-eslint/no-unused-vars
+   30:13  warning  'password' is assigned a value but never used  @typescript-eslint/no-unused-vars
+   65:13  warning  'password' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  100:13  warning  'password' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  139:23  warning  '_' is assigned a value but never used         @typescript-eslint/no-unused-vars
+  236:47  error    Unexpected any. Specify a different type       @typescript-eslint/no-explicit-any
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\store\orderStore.ts
+  53:7  warning  'generateId' is assigned a value but never used           @typescript-eslint/no-unused-vars
+  54:7  warning  'generateOrderNumber' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ksinh\Documents\TRABALHOS 2026\CLAUDE\dripshop\src\types\database.ts
+  37:18  error  An interface declaring no members is equivalent to its supertype  @typescript-eslint/no-empty-object-type
+  39:18  error  An interface declaring no members is equivalent to its supertype  @typescript-eslint/no-empty-object-type
+  84:18  error  An interface declaring no members is equivalent to its supertype  @typescript-eslint/no-empty-object-type
+
+Ô£û 87 problems (9 errors, 78 warnings)
+
