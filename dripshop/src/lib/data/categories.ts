@@ -43,7 +43,7 @@ export const themes = [
 
 export const creators: Creator[] = [
   { id: "mc-lan", name: "MC LAN", slug: "mc-lan", verified: true },
-  { id: "tz-da-coronel", name: "TZ DA CORONEL", slug: "tz-da-coronel", verified: true },
+  { id: "mc-poze-do-rodo", name: "MC POZE DO RODO", slug: "mc-poze-do-rodo", verified: true },
   { id: "kawe", name: "KAWE", slug: "kawe", verified: true },
   { id: "raflow", name: "RAFLOW", slug: "raflow", verified: true },
   { id: "ale", name: "ALE", slug: "ale", verified: true },
