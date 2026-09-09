@@ -26,7 +26,7 @@ export default function CadastroPage() {
 
     const strength = passwordStrength(form.password);
     const strengthLabel = ["", "Fraca", "Fraca", "Média", "Forte", "Muito forte"][strength] || "";
-    const strengthColor = ["", "bg-red-500", "bg-red-500", "bg-yellow-500", "bg-green-500", "bg-green-600"][strength] || "";
+    const strengthColor = ["", "bg-gray-500", "bg-gray-500", "bg-gray-500", "bg-gray-500", "bg-gray-600"][strength] || "";
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -43,6 +43,10 @@ export default function CadastroPage() {
 
         const success = await register({ email: form.email, password: form.password, name: form.name });
         if (success) {
+            if (useAuthStore.getState().confirmationRequired) {
+                setError('Conta criada. Confirme seu email pelo link recebido antes de entrar.');
+                return;
+            }
             router.push("/conta");
         } else {
             setError("Erro ao criar conta. Tente novamente.");
@@ -71,7 +75,7 @@ export default function CadastroPage() {
                     </Link>
                 </div>
                 <div className="relative z-10 space-y-8">
-                    <h2 className="text-5xl font-bold leading-tight" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+                    <h2 className="text-5xl font-bold leading-tight" style={{ fontFamily: "Manrope, sans-serif" }}>
                         Junte-se à<br />Cena
                     </h2>
                     <div className="space-y-4">
@@ -83,7 +87,7 @@ export default function CadastroPage() {
                         ].map((benefit, i) => (
                             <div key={i} className="flex items-center gap-3">
                                 <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
-                                    <Check className="w-3.5 h-3.5 text-green-400" />
+                                    <Check className="w-3.5 h-3.5 text-gray-400" />
                                 </div>
                                 <span className="text-gray-400">{benefit}</span>
                             </div>
@@ -109,7 +113,7 @@ export default function CadastroPage() {
                     </div>
 
                     <div>
-                        <h2 className="text-4xl font-black uppercase tracking-tighter" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+                        <h2 className="text-4xl font-black uppercase tracking-tighter" style={{ fontFamily: "Manrope, sans-serif" }}>
                             Criar conta
                         </h2>
                         <p className="text-gray-500 mt-2 font-bold uppercase tracking-widest text-xs">
@@ -118,7 +122,7 @@ export default function CadastroPage() {
                     </div>
 
                     {error && (
-                        <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm">
+                        <div className="bg-gray-50 border border-gray-200 text-gray-700 px-4 py-3 rounded-xl text-sm">
                             {error}
                         </div>
                     )}
@@ -261,3 +265,4 @@ export default function CadastroPage() {
         </div>
     );
 }
+

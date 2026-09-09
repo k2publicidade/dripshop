@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { User, Package, MapPin, Heart, LogOut, ChevronRight } from "lucide-react";
@@ -21,7 +20,7 @@ export default function ContaLayout({ children }: { children: React.ReactNode })
         <div className="min-h-screen bg-white">
             <div className="container py-12">
                 <div className="mb-12 border-b border-gray-200 pb-6">
-                    <h1 className="text-4xl font-black uppercase tracking-tighter" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+                    <h1 className="text-4xl font-black uppercase tracking-tighter" style={{ fontFamily: "Manrope, sans-serif" }}>
                         Minha Conta
                     </h1>
                     <p className="text-gray-500 mt-2 font-bold uppercase tracking-widest text-xs">
@@ -53,7 +52,7 @@ export default function ContaLayout({ children }: { children: React.ReactNode })
                             })}
                             <button
                                 onClick={logout}
-                                className="flex items-center gap-3 px-5 py-4 text-xs font-bold uppercase tracking-widest text-red-600 hover:bg-red-50 transition-all border-t border-gray-200 w-full"
+                                className="flex items-center gap-3 px-5 py-4 text-xs font-bold uppercase tracking-widest text-gray-600 hover:bg-gray-50 transition-all border-t border-gray-200 w-full"
                             >
                                 <LogOut className="w-4 h-4" />
                                 <span>Sair</span>
@@ -68,3 +67,4 @@ export default function ContaLayout({ children }: { children: React.ReactNode })
         </div>
     );
 }
+

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useAuthStore } from "@/store/auth";
 import { Save, Check } from "lucide-react";
 
-export default function ContaPage() {
+function AccountForm() {
     const { user } = useAuthStore();
     const [form, setForm] = useState({
         name: user?.name || "",
@@ -13,14 +13,21 @@ export default function ContaPage() {
         cpf: user?.cpf || "",
     });
     const [saved, setSaved] = useState(false);
+    const [error, setError] = useState('');
+
 
     const updateField = (field: string, value: string) => {
         setForm((prev) => ({ ...prev, [field]: value }));
         setSaved(false);
     };
 
-    const handleSave = (e: React.FormEvent) => {
+    const handleSave = async (e: React.FormEvent) => {
         e.preventDefault();
+        setError('');
+        const response = await fetch('/api/account', {method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify(form)});
+        const result = await response.json();
+        if (!response.ok) { setError(result.error?.message || 'Não foi possível salvar.'); return; }
+        useAuthStore.getState().setUser(result.data);
         setSaved(true);
         setTimeout(() => setSaved(false), 3000);
     };
@@ -28,11 +35,12 @@ export default function ContaPage() {
     return (
         <div className="space-y-6">
             <div className="bg-white border border-gray-300 p-6 lg:p-8">
-                <h2 className="text-2xl font-black uppercase tracking-widest mb-8" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+                <h2 className="text-2xl font-black uppercase tracking-widest mb-8" style={{ fontFamily: "Manrope, sans-serif" }}>
                     Dados Pessoais
                 </h2>
 
                 <form onSubmit={handleSave} className="space-y-5">
+                    {error && <p role="alert" className="text-gray-700">{error}</p>}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <div>
                             <label className="block text-[10px] uppercase tracking-widest font-bold text-gray-500 mb-2">Nome completo</label>
@@ -88,7 +96,7 @@ export default function ContaPage() {
             </div>
 
             <div className="bg-white border border-gray-300 p-6 lg:p-8">
-                <h2 className="text-2xl font-black uppercase tracking-widest mb-8" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+                <h2 className="text-2xl font-black uppercase tracking-widest mb-8" style={{ fontFamily: "Manrope, sans-serif" }}>
                     Alterar Senha
                 </h2>
                 <form className="space-y-5 max-w-md">
@@ -124,3 +132,6 @@ export default function ContaPage() {
         </div>
     );
 }
+
+
+export default function ContaPage(){const {user}=useAuthStore();return user?<AccountForm key={user.id}/>:<p role="status">Carregando sua conta...</p>;}

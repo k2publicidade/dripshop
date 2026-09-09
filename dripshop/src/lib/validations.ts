@@ -62,7 +62,7 @@ export const collectionSchema = z.object({
 
 export const createUserSchema = z.object({
   email: z.string().email("Email inválido"),
-  password: z.string().min(6, "Senha deve ter pelo menos 6 caracteres"),
+  password: z.string().min(8, "Senha deve ter pelo menos 8 caracteres").max(128),
   name: z.string().max(100).optional(),
   phone: z.string().optional(),
   cpf: z.string().optional(),

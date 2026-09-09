@@ -1,12 +1,3 @@
-import { NextRequest } from "next/server";
-import { productService } from "@/lib/services/product.service";
-import { successResponse, handleError } from "@/lib/api-response";
-
-export async function GET(request: NextRequest) {
-  try {
-    const onSaleProducts = await productService.getOnSaleProducts();
-    return successResponse(onSaleProducts);
-  } catch (error) {
-    return handleError(error);
-  }
-}
+import {getCatalog} from '@/lib/catalog';
+import {successResponse,handleError} from '@/lib/api-response';
+export async function GET(){try{return successResponse((await getCatalog()).filter(p=>p.discount && p.discount > 0));}catch(e){return handleError(e);}}

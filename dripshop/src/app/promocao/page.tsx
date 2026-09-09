@@ -1,8 +1,9 @@
 import ProductGrid from "@/components/product/ProductGrid";
-import { getOnSaleProducts } from "@/lib/data/products";
+import { getCatalog } from "@/lib/catalog";
 
-export default function PromotionPage() {
-  const saleProducts = getOnSaleProducts();
+export default async function PromotionPage() {
+  const products = await getCatalog();
+  const saleProducts = products.filter(p => p.discount && p.discount > 0);
 
   return (
     <div className="container py-8">

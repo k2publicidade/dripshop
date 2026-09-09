@@ -11,7 +11,7 @@ export default function PrivacidadePage() {
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white border-b">
         <div className="container py-12">
-          <h1 className="text-3xl lg:text-4xl font-bold mb-2" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+          <h1 className="text-3xl lg:text-4xl font-bold mb-2" style={{ fontFamily: "Manrope, sans-serif" }}>
             Política de Privacidade
           </h1>
           <p className="text-gray-500">
@@ -38,7 +38,7 @@ export default function PrivacidadePage() {
                 <Eye className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h2 className="text-xl font-bold mb-2" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+                <h2 className="text-xl font-bold mb-2" style={{ fontFamily: "Manrope, sans-serif" }}>
                   Informações que Coletamos
                 </h2>
                 <p className="text-gray-600">
@@ -72,7 +72,7 @@ export default function PrivacidadePage() {
                 <Lock className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h2 className="text-xl font-bold mb-2" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+                <h2 className="text-xl font-bold mb-2" style={{ fontFamily: "Manrope, sans-serif" }}>
                   Como Usamos suas Informações
                 </h2>
                 <p className="text-gray-600">
@@ -110,7 +110,7 @@ export default function PrivacidadePage() {
                 <Shield className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h2 className="text-xl font-bold mb-2" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+                <h2 className="text-xl font-bold mb-2" style={{ fontFamily: "Manrope, sans-serif" }}>
                   Proteção de Dados
                 </h2>
                 <p className="text-gray-600">
@@ -144,7 +144,7 @@ export default function PrivacidadePage() {
                 <Database className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h2 className="text-xl font-bold mb-2" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+                <h2 className="text-xl font-bold mb-2" style={{ fontFamily: "Manrope, sans-serif" }}>
                   Seus Direitos (LGPD)
                 </h2>
                 <p className="text-gray-600">
@@ -177,15 +177,15 @@ export default function PrivacidadePage() {
           </div>
 
           <div className="bg-white rounded-2xl p-8 shadow-sm">
-            <h2 className="text-xl font-bold mb-4" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+            <h2 className="text-xl font-bold mb-4" style={{ fontFamily: "Manrope, sans-serif" }}>
               Fale Conosco
             </h2>
             <p className="text-gray-600 mb-4">
               Para exercer seus direitos ou esclarecer dúvidas sobre esta política, entre em contato:
             </p>
             <div className="space-y-2 text-gray-600">
-              <p><strong>Email:</strong> privacidade@dripshop.com.br</p>
-              <p><strong>WhatsApp:</strong> (11) 99999-9999</p>
+              <p><strong>Email:</strong> admin@dripshop.com.br</p>
+              <p>Use o formulário de atendimento para enviar sua solicitação com segurança.</p>
             </div>
           </div>
         </div>
@@ -193,3 +193,4 @@ export default function PrivacidadePage() {
     </div>
   );
 }
+

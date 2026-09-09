@@ -13,6 +13,8 @@ interface AuthStore {
     user: User | null;
     isAuthenticated: boolean;
     isLoading: boolean;
+    confirmationRequired: boolean;
+    refresh: () => Promise<void>;
     login: (email: string, password: string) => Promise<boolean>;
     register: (data: { email: string; password: string; name?: string }) => Promise<boolean>;
     logout: () => void;
@@ -23,6 +25,14 @@ export const useAuthStore = create<AuthStore>((set) => ({
     user: null,
     isAuthenticated: false,
     isLoading: false,
+    confirmationRequired: false,
+    refresh: async () => {
+        try {
+            const response = await fetch('/api/auth/session');
+            const { user } = await response.json();
+            set({ user, isAuthenticated: !!user });
+        } catch { set({ user: null, isAuthenticated: false }); }
+    },
 
     login: async (email: string, password: string) => {
         set({ isLoading: true });
@@ -54,6 +64,10 @@ export const useAuthStore = create<AuthStore>((set) => ({
                 body: JSON.stringify(data),
             });
             const result = await res.json();
+            if (res.ok && result.confirmationRequired) {
+                set({ confirmationRequired: true, isLoading: false });
+                return true;
+            }
             if (res.ok && result.user) {
                 set({ user: result.user, isAuthenticated: true, isLoading: false });
                 return true;
@@ -66,8 +80,11 @@ export const useAuthStore = create<AuthStore>((set) => ({
         }
     },
 
-    logout: () => {
+    logout: async () => {
+        const response = await fetch('/api/auth/logout', { method: 'POST' });
+        if (!response.ok) return;
         set({ user: null, isAuthenticated: false });
+        window.location.assign('/login');
     },
 
     setUser: (user) => {

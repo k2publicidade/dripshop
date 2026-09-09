@@ -55,7 +55,7 @@ export default function ComoLavarPage() {
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white border-b">
         <div className="container py-12">
-          <h1 className="text-3xl lg:text-4xl font-bold mb-2" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+          <h1 className="text-3xl lg:text-4xl font-bold mb-2" style={{ fontFamily: "Manrope, sans-serif" }}>
             Cuidados com a Peça
           </h1>
           <p className="text-gray-500">
@@ -67,7 +67,7 @@ export default function ComoLavarPage() {
       <div className="container py-12">
         <div className="max-w-3xl mx-auto">
           <div className="bg-white rounded-2xl p-8 shadow-sm mb-8">
-            <h2 className="text-2xl font-bold mb-4" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+            <h2 className="text-2xl font-bold mb-4" style={{ fontFamily: "Manrope, sans-serif" }}>
               Instruções Gerais
             </h2>
             <p className="text-gray-600 mb-4">
@@ -90,7 +90,7 @@ export default function ComoLavarPage() {
                     <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                       <Icon className="w-5 h-5 text-primary" />
                     </div>
-                    <h3 className="text-lg font-bold" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+                    <h3 className="text-lg font-bold" style={{ fontFamily: "Manrope, sans-serif" }}>
                       {section.title}
                     </h3>
                   </div>
@@ -108,7 +108,7 @@ export default function ComoLavarPage() {
           </div>
 
           <div className="bg-white rounded-2xl p-8 shadow-sm">
-            <h2 className="text-2xl font-bold mb-4" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+            <h2 className="text-2xl font-bold mb-4" style={{ fontFamily: "Manrope, sans-serif" }}>
               Simbolos de Lavagem
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -129,7 +129,7 @@ export default function ComoLavarPage() {
           </div>
 
           <div className="mt-8 p-6 bg-primary/5 rounded-2xl border border-primary/20">
-            <h3 className="font-bold mb-2" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+            <h3 className="font-bold mb-2" style={{ fontFamily: "Manrope, sans-serif" }}>
               Dica especial
             </h3>
             <p className="text-gray-600 text-sm">
@@ -142,3 +142,4 @@ export default function ComoLavarPage() {
     </div>
   );
 }
+

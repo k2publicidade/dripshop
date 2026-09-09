@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+/.next-cache-before-upgrade/
+
+/audit-current.json
+/lint-current.json

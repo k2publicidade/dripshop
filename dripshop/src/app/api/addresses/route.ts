@@ -1,0 +1,11 @@
+import { NextRequest } from 'next/server';
+import { requireUser } from '@/lib/auth';
+import { successResponse, handleError } from '@/lib/api-response';
+import { createAddressSchema } from '@/lib/validations';
+import { z } from 'zod';
+const addressSchema=createAddressSchema.extend({state:z.enum(['AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SP','SE','TO']),zipCode:z.string().regex(/^\d{5}-?\d{3}$/,'CEP inválido')});
+export async function GET(){try{const {db,user}=await requireUser();const {data,error}=await db.from('addresses').select('*').eq('user_id',user.id).order('created_at');if(error)throw error;return successResponse(data?.map(a=>({...a,zipCode:a.zip_code,isDefault:a.is_default})));}catch(e){return handleError(e);}}
+export async function POST(request:NextRequest){try{const {db,user}=await requireUser();const body=await request.json();const {zipCode,isDefault,...input}=addressSchema.parse(body);const {data,error}=await db.from('addresses').insert({...input,user_id:user.id,zip_code:zipCode,is_default:isDefault}).select().single();if(error)throw error;return successResponse(data,201);}catch(e){return handleError(e);}}
+export async function DELETE(request:NextRequest){try{const {db,user}=await requireUser();const {id}=z.object({id:z.string().uuid()}).parse(await request.json());const {error}=await db.from('addresses').delete().eq('id',id).eq('user_id',user.id);if(error)throw error;return successResponse({deleted:true});}catch(e){return handleError(e);}}
+export async function PATCH(request:NextRequest){try{const {db}=await requireUser();const {id}=z.object({id:z.string().uuid()}).parse(await request.json());const {error}=await db.rpc('set_default_address',{p_id:id});if(error)throw error;return successResponse({updated:true});}catch(e){return handleError(e);}}
+export async function PUT(request:NextRequest){try{const {db,user}=await requireUser();const body=await request.json();const id=z.string().uuid().parse(body.id);const {zipCode,isDefault,...input}=addressSchema.parse(body);const {data,error}=await db.from('addresses').update({...input,zip_code:zipCode,is_default:isDefault}).eq('id',id).eq('user_id',user.id).select().single();if(error)throw error;return successResponse(data);}catch(e){return handleError(e);}}

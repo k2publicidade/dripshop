@@ -1,5 +1,5 @@
 import ProductGrid from "@/components/product/ProductGrid";
-import { products } from "@/lib/data/products";
+import { getCatalog } from "@/lib/catalog";
 import { creators } from "@/lib/data/categories";
 import { notFound } from "next/navigation";
 import { CheckCircle } from "lucide-react";
@@ -16,6 +16,7 @@ export async function generateStaticParams() {
 
 export default async function ArtistaPage({ params }: PageProps) {
   const { slug } = await params;
+  const products = await getCatalog();
   const creator = creators.find((c) => c.slug === slug);
 
   if (!creator) {
@@ -44,7 +45,7 @@ export default async function ArtistaPage({ params }: PageProps) {
             </div>
             <div>
               <div className="flex items-center gap-3">
-                <h1 className="text-3xl lg:text-4xl font-bold" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+                <h1 className="text-3xl lg:text-4xl font-bold" style={{ fontFamily: "Manrope, sans-serif" }}>
                   {creator.name}
                 </h1>
                 {creator.verified && (
@@ -72,3 +73,4 @@ export default async function ArtistaPage({ params }: PageProps) {
     </div>
   );
 }
+

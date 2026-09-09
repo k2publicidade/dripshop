@@ -1,26 +1,3 @@
-import { NextRequest } from "next/server";
-import { featuredCategoryService } from "@/lib/services/featured-category.service";
-import { successResponse, handleError } from "@/lib/api-response";
-
-export async function GET(request: NextRequest) {
-    try {
-        const { searchParams } = new URL(request.url);
-        const all = searchParams.get("all") === "true";
-        const data = all
-            ? await featuredCategoryService.getAll()
-            : await featuredCategoryService.getActive();
-        return successResponse(data);
-    } catch (error) {
-        return handleError(error);
-    }
-}
-
-export async function POST(request: NextRequest) {
-    try {
-        const body = await request.json();
-        const item = await featuredCategoryService.create(body);
-        return successResponse(item, 201);
-    } catch (error) {
-        return handleError(error);
-    }
-}
+import {createClient} from '@/lib/supabase/server';
+import {successResponse,handleError} from '@/lib/api-response';
+export async function GET(){try{const db=await createClient();const {data,error}=await db.from('featured_categories').select('*');if(error)throw error;return successResponse(data);}catch(e){return handleError(e);}}

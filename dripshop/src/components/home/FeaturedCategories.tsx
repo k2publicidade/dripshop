@@ -69,7 +69,7 @@ export default function FeaturedCategories({ categories }: FeaturedCategoriesPro
                             <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 z-10">
                                 <h3
                                     className="text-2xl md:text-3xl lg:text-4xl font-black text-white uppercase tracking-tight leading-none mb-3"
-                                    style={{ fontFamily: "Space Grotesk, sans-serif" }}
+                                    style={{ fontFamily: "Manrope, sans-serif" }}
                                 >
                                     {item.title}
                                 </h3>
@@ -84,3 +84,4 @@ export default function FeaturedCategories({ categories }: FeaturedCategoriesPro
         </section>
     );
 }
+

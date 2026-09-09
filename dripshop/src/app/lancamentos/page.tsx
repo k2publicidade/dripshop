@@ -1,14 +1,15 @@
 import ProductGrid from "@/components/product/ProductGrid";
-import { products } from "@/lib/data/products";
+import { getCatalog } from "@/lib/catalog";
 
-export default function LancamentosPage() {
+export default async function LancamentosPage() {
+  const products = await getCatalog();
   const newProducts = products.filter(p => p.isNew);
 
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white border-b">
         <div className="container py-12">
-          <h1 className="text-3xl lg:text-4xl font-bold mb-2" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+          <h1 className="text-3xl lg:text-4xl font-bold mb-2" style={{ fontFamily: "Manrope, sans-serif" }}>
             Lançamentos
           </h1>
           <p className="text-gray-500">
@@ -30,3 +31,4 @@ export default function LancamentosPage() {
     </div>
   );
 }
+

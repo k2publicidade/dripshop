@@ -1,46 +1,7 @@
-import { NextRequest } from "next/server";
-import { cartService } from "@/lib/services/cart.service";
-import { addToCartSchema, updateCartItemSchema } from "@/lib/validations";
-import { successResponse, handleError, getSearchParams } from "@/lib/api-response";
-
-export async function GET(request: NextRequest) {
-  try {
-    const searchParams = getSearchParams(request.nextUrl.searchParams);
-    const userId = searchParams.userId as string;
-
-    if (!userId) {
-      return handleError(new Error("userId é obrigatório"));
-    }
-
-    const cart = await cartService.getCart(userId);
-    const totals = await cartService.getCartTotal(userId);
-
-    return successResponse({ items: cart, subtotal: totals.subtotal, totalItems: totals.items });
-  } catch (error) {
-    return handleError(error);
-  }
-}
-
-export async function POST(request: NextRequest) {
-  try {
-    const body = await request.json();
-    const { userId, productId, quantity, selectedSize, selectedColor } = body;
-
-    if (!userId) {
-      return handleError(new Error("userId é obrigatório"));
-    }
-
-    const data = {
-      userId,
-      productId,
-      quantity: quantity || 1,
-      selectedSize,
-      selectedColor,
-    };
-
-    const item = await cartService.addToCart(data.userId, data);
-    return successResponse(item, 201);
-  } catch (error) {
-    return handleError(error);
-  }
-}
+import { NextRequest } from 'next/server';
+import { requireUser } from '@/lib/auth';
+import { successResponse,handleError } from '@/lib/api-response';
+import {addToCartSchema} from '@/lib/validations';
+export async function GET(){try{const {db,user}=await requireUser();const {data,error}=await db.from('cart_items').select('*').eq('user_id',user.id);if(error)throw error;return successResponse(data);}catch(e){return handleError(e);}}
+export async function POST(request:NextRequest){try{const {db}=await requireUser();const b=addToCartSchema.parse(await request.json());const {data,error}=await db.rpc('upsert_cart_item',{p_product:b.productId,p_quantity:b.quantity,p_size:b.selectedSize,p_color:b.selectedColor});if(error)throw new Error(error.message==='Estoque insuficiente'?'Estoque insuficiente para esta variação.':error.message==='Produto indisponível'?'Produto indisponível.':'Não foi possível atualizar a sacola.');return successResponse(data);}catch(e){return handleError(e);}}
+export async function DELETE(request:NextRequest){try{const {db,user}=await requireUser();const body=await request.json().catch(()=>({}));const parsed=addToCartSchema.partial().safeParse(body);let query=db.from('cart_items').delete().eq('user_id',user.id);if(parsed.success&&parsed.data.productId&&parsed.data.selectedSize&&parsed.data.selectedColor) query=query.eq('product_id',parsed.data.productId).eq('selected_size',parsed.data.selectedSize).eq('selected_color',parsed.data.selectedColor);const {error}=await query;if(error)throw error;return successResponse({cleared:!parsed.success||!parsed.data.productId});}catch(e){return handleError(e);}}

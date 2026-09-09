@@ -17,6 +17,9 @@ export interface Product {
   isFeatured?: boolean;
   theme?: string;
   createdAt: string;
+  stock?: number;
+  variants?: { size: string; color: string; stock: number }[];
+  isActive?: boolean;
 }
 
 export interface ProductColor {

@@ -1,5 +1,5 @@
-import ProductGrid from "@/components/product/ProductGrid";
-import { products as staticProducts } from "@/lib/data/products";
+import CatalogFilters from "@/components/product/CatalogFilters";
+import { getCatalog } from "@/lib/catalog";
 import { Search } from "lucide-react";
 
 interface PageProps {
@@ -8,6 +8,7 @@ interface PageProps {
 
 export default async function BuscaPage({ searchParams }: PageProps) {
   const { q } = await searchParams;
+  const staticProducts = await getCatalog();
   const query = q?.toLowerCase() || "";
   
   const results = staticProducts.filter(
@@ -24,8 +25,8 @@ export default async function BuscaPage({ searchParams }: PageProps) {
         <div className="container py-8">
           <div className="flex items-center gap-3 mb-2">
             <Search className="w-6 h-6 text-gray-400" />
-            <h1 className="text-2xl lg:text-3xl font-bold" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
-              Resultados para &quot;{q}&quot;
+            <h1 className="text-2xl lg:text-3xl font-bold" style={{ fontFamily: "Manrope, sans-serif" }}>
+              {q ? `Resultados para “${q}”` : 'Explore todas as peças'}
             </h1>
           </div>
           <p className="text-gray-500">
@@ -36,7 +37,7 @@ export default async function BuscaPage({ searchParams }: PageProps) {
 
       <div className="container py-8">
         {results.length > 0 ? (
-          <ProductGrid products={results} />
+          <CatalogFilters products={results} />
         ) : (
           <div className="bg-white rounded-2xl p-16 text-center">
             <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -50,3 +51,4 @@ export default async function BuscaPage({ searchParams }: PageProps) {
     </div>
   );
 }
+

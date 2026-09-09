@@ -3,12 +3,12 @@ import "./globals.css";
 import LayoutShell from "@/components/layout/LayoutShell";
 
 export const metadata: Metadata = {
-  title: "DripShop - Vista o Extraordinário | Roupas e Acessórios Exclusivos",
-  description: "Encontre roupas, camisetas, moletons e acessórios exclusivos. Frete grátis acima de R$199, parcelamento em 6x sem juros.",
-  keywords: "roupas, camisetas, moletons, acessorios, moda, dripshop",
+  title: "DripShop | Drops exclusivos de RAP e FUNK brasileiro",
+  description: "Peças oficiais e drops exclusivos de artistas do RAP e FUNK brasileiro. Vista a cultura, leve sua identidade para a rua.",
+  keywords: "roupas rap brasileiro, roupas funk, drops exclusivos, camisetas de artistas, DripShop",
   openGraph: {
-    title: "DripShop - Vista o Extraordinário",
-    description: "Roupas e acessórios exclusivos para você expressar seu estilo.",
+    title: "DripShop | Vista a cultura que vive em você",
+    description: "Drops exclusivos e peças oficiais para quem vive o RAP e o FUNK brasileiro.",
     type: "website",
     locale: "pt_BR",
   },

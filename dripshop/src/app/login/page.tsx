@@ -19,7 +19,8 @@ export default function LoginPage() {
         setError("");
         const success = await login(email, password);
         if (success) {
-            router.push("/conta");
+            const next = new URLSearchParams(window.location.search).get('next');
+            router.push(next && next.startsWith('/') && !next.startsWith('//') ? next : '/conta');
         } else {
             setError("Email ou senha inválidos. Tente novamente.");
         }
@@ -43,7 +44,7 @@ export default function LoginPage() {
                     </Link>
                 </div>
                 <div className="relative z-10 space-y-6">
-                    <h2 className="text-5xl font-bold leading-tight" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+                    <h2 className="text-5xl font-bold leading-tight" style={{ fontFamily: "Manrope, sans-serif" }}>
                         O Drip<br />Chama
                     </h2>
                     <p className="text-gray-400 text-lg max-w-md">
@@ -73,7 +74,7 @@ export default function LoginPage() {
                     </div>
 
                     <div>
-                        <h2 className="text-4xl font-black uppercase tracking-tighter" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+                        <h2 className="text-4xl font-black uppercase tracking-tighter" style={{ fontFamily: "Manrope, sans-serif" }}>
                             Entrar na conta
                         </h2>
                         <p className="text-gray-500 mt-2 font-bold uppercase tracking-widest text-xs">
@@ -82,7 +83,7 @@ export default function LoginPage() {
                     </div>
 
                     {error && (
-                        <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm">
+                        <div className="bg-gray-50 border border-gray-200 text-gray-700 px-4 py-3 rounded-xl text-sm">
                             {error}
                         </div>
                     )}
@@ -185,3 +186,4 @@ export default function LoginPage() {
         </div>
     );
 }
+

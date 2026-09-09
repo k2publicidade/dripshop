@@ -11,7 +11,7 @@ export default function TrocasPage() {
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white border-b">
         <div className="container py-12">
-          <h1 className="text-3xl lg:text-4xl font-bold mb-2" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+          <h1 className="text-3xl lg:text-4xl font-bold mb-2" style={{ fontFamily: "Manrope, sans-serif" }}>
             Trocas e Devoluções
           </h1>
           <p className="text-gray-500">
@@ -28,7 +28,7 @@ export default function TrocasPage() {
                 <ArrowLeftRight className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h2 className="text-xl font-bold mb-2" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+                <h2 className="text-xl font-bold mb-2" style={{ fontFamily: "Manrope, sans-serif" }}>
                   Como Solicitar uma Troca
                 </h2>
                 <p className="text-gray-600">
@@ -40,7 +40,7 @@ export default function TrocasPage() {
             <ol className="space-y-4 text-gray-600 ml-4">
               <li className="flex items-start gap-3">
                 <span className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">1</span>
-                <span>Acesse sua conta em &quot;Meus Pedidos&quot; ou entre em contato pelo WhatsApp</span>
+                <span>Acesse sua conta em &quot;Meus Pedidos&quot; ou use o formulário de atendimento</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">2</span>
@@ -63,7 +63,7 @@ export default function TrocasPage() {
                 <Package className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h2 className="text-xl font-bold mb-2" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+                <h2 className="text-xl font-bold mb-2" style={{ fontFamily: "Manrope, sans-serif" }}>
                   Condições para Troca
                 </h2>
                 <p className="text-gray-600">
@@ -93,7 +93,7 @@ export default function TrocasPage() {
                 <RefreshCw className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h2 className="text-xl font-bold mb-2" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+                <h2 className="text-xl font-bold mb-2" style={{ fontFamily: "Manrope, sans-serif" }}>
                   Devolução por Arrependimento
                 </h2>
                 <p className="text-gray-600">
@@ -120,7 +120,7 @@ export default function TrocasPage() {
                 <Clock className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h2 className="text-xl font-bold mb-2" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+                <h2 className="text-xl font-bold mb-2" style={{ fontFamily: "Manrope, sans-serif" }}>
                   Produto com Defeito
                 </h2>
                 <p className="text-gray-600">
@@ -130,7 +130,7 @@ export default function TrocasPage() {
               </div>
             </div>
             <p className="text-gray-500 text-sm ml-4">
-              Em caso de dúvidas, entre em contato pelo WhatsApp (11) 99999-9999 ou pelo email contato@dripshop.com.br
+              Em caso de dúvidas, use o nosso formulário de atendimento.
             </p>
           </div>
         </div>
@@ -138,3 +138,4 @@ export default function TrocasPage() {
     </div>
   );
 }
+

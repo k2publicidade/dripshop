@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Plus, MapPin, Edit2, Trash2, Check, X } from "lucide-react";
 
 interface Address {
@@ -16,69 +16,37 @@ interface Address {
     isDefault: boolean;
 }
 
-const mockAddresses: Address[] = [
-    {
-        id: "1",
-        label: "Casa",
-        street: "Rua das Flores",
-        number: "123",
-        complement: "Apto 45",
-        neighborhood: "Jardim Paulista",
-        city: "São Paulo",
-        state: "SP",
-        zipCode: "01452-000",
-        isDefault: true,
-    },
-    {
-        id: "2",
-        label: "Trabalho",
-        street: "Av. Paulista",
-        number: "1578",
-        complement: "14º andar",
-        neighborhood: "Bela Vista",
-        city: "São Paulo",
-        state: "SP",
-        zipCode: "01310-200",
-        isDefault: false,
-    },
-];
+
 
 const emptyAddress = { label: "", street: "", number: "", complement: "", neighborhood: "", city: "", state: "", zipCode: "", isDefault: false };
 
 export default function EnderecosPage() {
-    const [addresses, setAddresses] = useState(mockAddresses);
+    const [addresses, setAddresses] = useState<Address[]>([]);
+    const [error,setError]=useState('');
+    const load=async()=>{try{const r=await fetch('/api/addresses');const b=await r.json();if(!r.ok)throw new Error(b.error?.message);setAddresses(b.data);}catch{setError('Não foi possível carregar seus endereços.');}};
+    useEffect(()=>{void load();},[]);
     const [showForm, setShowForm] = useState(false);
     const [form, setForm] = useState(emptyAddress);
+    const [editingId, setEditingId] = useState<string | null>(null);
 
     const updateField = (field: string, value: string | boolean) => {
         setForm((prev) => ({ ...prev, [field]: value }));
     };
 
-    const handleAdd = (e: React.FormEvent) => {
-        e.preventDefault();
-        const newAddr: Address = { ...form, id: Date.now().toString() };
-        setAddresses((prev) => [...prev, newAddr]);
-        setForm(emptyAddress);
-        setShowForm(false);
-    };
-
-    const handleRemove = (id: string) => {
-        setAddresses((prev) => prev.filter((a) => a.id !== id));
-    };
-
-    const handleSetDefault = (id: string) => {
-        setAddresses((prev) => prev.map((a) => ({ ...a, isDefault: a.id === id })));
-    };
+    const mutate=async(method:string,body:unknown)=>{setError('');try{const r=await fetch('/api/addresses',{method,headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const b=await r.json();if(!r.ok)throw new Error(b.error?.message||'Não foi possível salvar.');await load();return true;}catch(e){setError(e instanceof Error?e.message:'Erro de conexão');return false;}};
+    const handleAdd=async(e:React.FormEvent)=>{e.preventDefault();if(await mutate(editingId?'PUT':'POST',{...form,...(editingId?{id:editingId}:{})})){setForm(emptyAddress);setEditingId(null);setShowForm(false);}};
+    const handleRemove=(id:string)=>mutate('DELETE',{id});
+    const handleSetDefault=(id:string)=>mutate('PATCH',{id});
 
     return (
-        <div className="space-y-6">
+        <div className="space-y-6">{error&&<p role="alert" className="text-gray-700">{error}</p>}
             <div className="bg-white border border-gray-300 p-6 lg:p-8">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-                    <h2 className="text-2xl font-black uppercase tracking-widest" style={{ fontFamily: "Space Grotesk, sans-serif" }}>
+                    <h2 className="text-2xl font-black uppercase tracking-widest" style={{ fontFamily: "Manrope, sans-serif" }}>
                         Meus Endereços
                     </h2>
                     <button
-                        onClick={() => setShowForm(!showForm)}
+                        onClick={() => { setEditingId(null);setForm(emptyAddress);setShowForm(!showForm); }}
                         className="btn-primary py-3 px-6 text-xs uppercase font-bold tracking-widest"
                     >
                         {showForm ? (
@@ -91,7 +59,7 @@ export default function EnderecosPage() {
 
                 {showForm && (
                     <form onSubmit={handleAdd} className="mb-10 p-6 lg:p-8 bg-white border border-gray-300 animate-fade-in-up" style={{ animationDuration: "0.3s" }}>
-                        <h3 className="font-black uppercase tracking-widest mb-6">Adicionar Endereço</h3>
+                        <h3 className="font-black uppercase tracking-widest mb-6">{editingId?'Editar endereço':'Adicionar endereço'}</h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             <div>
                                 <label className="block text-[10px] uppercase tracking-widest font-bold text-gray-500 mb-2">Apelido</label>
@@ -231,12 +199,12 @@ export default function EnderecosPage() {
                                             <Check className="w-3.5 h-3.5" /> Tornar padrão
                                         </button>
                                     )}
-                                    <button className="text-[10px] uppercase tracking-widest text-gray-500 hover:text-black font-bold flex items-center gap-1 transition-colors ml-auto border-r border-gray-200 pr-4">
+                                    <button onClick={() => {setEditingId(addr.id);setForm({...addr,complement:addr.complement||''});setShowForm(true);window.scrollTo({top:0,behavior:'smooth'});}} className="text-[10px] uppercase tracking-widest text-gray-500 hover:text-black font-bold flex items-center gap-1 transition-colors ml-auto border-r border-gray-200 pr-4">
                                         <Edit2 className="w-3.5 h-3.5" /> Editar
                                     </button>
                                     <button
                                         onClick={() => handleRemove(addr.id)}
-                                        className="text-[10px] uppercase tracking-widest text-red-500 hover:text-red-700 font-bold flex items-center gap-1 transition-colors"
+                                        className="text-[10px] uppercase tracking-widest text-gray-500 hover:text-gray-700 font-bold flex items-center gap-1 transition-colors"
                                     >
                                         <Trash2 className="w-3.5 h-3.5" /> Remover
                                     </button>
@@ -249,3 +217,4 @@ export default function EnderecosPage() {
         </div>
     );
 }
+
