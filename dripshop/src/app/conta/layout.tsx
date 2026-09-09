@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { User, Package, MapPin, Heart, LogOut, ChevronRight } from "lucide-react";
 import { useAuthStore } from "@/store/auth";
 
@@ -14,7 +14,8 @@ const accountLinks = [
 
 export default function ContaLayout({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
-    const { user, logout } = useAuthStore();
+        const router = useRouter();
+        const { user, logout } = useAuthStore();
 
     return (
         <div className="min-h-screen bg-white">
@@ -51,9 +52,9 @@ export default function ContaLayout({ children }: { children: React.ReactNode })
                                 );
                             })}
                             <button
-                                onClick={logout}
-                                className="flex items-center gap-3 px-5 py-4 text-xs font-bold uppercase tracking-widest text-gray-600 hover:bg-gray-50 transition-all border-t border-gray-200 w-full"
-                            >
+                                                            onClick={() => { logout(); router.push('/login'); }}
+                                                            className="flex items-center gap-3 px-5 py-4 text-xs font-bold uppercase tracking-widest text-gray-600 hover:bg-gray-50 transition-all border-t border-gray-200 w-full"
+                                                        >
                                 <LogOut className="w-4 h-4" />
                                 <span>Sair</span>
                             </button>

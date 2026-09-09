@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface FeaturedCategoryItem {
     id: string;
@@ -56,11 +57,13 @@ export default function FeaturedCategories({ categories }: FeaturedCategoriesPro
                             href={item.linkUrl}
                             className="group relative aspect-[4/3] sm:aspect-[3/2] overflow-hidden block"
                         >
-                            <img
-                                src={item.imageUrl}
-                                alt={item.title}
-                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            />
+                            <Image
+                                                            src={item.imageUrl}
+                                                            alt={item.title}
+                                                            fill
+                                                            sizes="(max-width:767px) 100vw, 50vw"
+                                                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                                        />
 
                             {/* Dark overlay */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 transition-all duration-500 group-hover:from-black/90 group-hover:via-black/40" />

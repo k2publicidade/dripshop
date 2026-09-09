@@ -14,27 +14,29 @@ export async function proxy(request: NextRequest) {
     },
   });
   const { data: { user } } = await db.auth.getUser();
+  const withSessionCookies = (target: NextResponse) => {
+    response.cookies.getAll().forEach(cookie => target.cookies.set(cookie));
+    return target;
+  };
   const path = request.nextUrl.pathname;
   const privateApi = /^\/api\/(orders|cart)(\/|$)/.test(path);
   const catalogWrite = /^\/api\/(products|categories|collections|featured-categories)(\/|$)/.test(path) && !['GET','HEAD'].includes(request.method);
   if (privateApi || catalogWrite) {
-    if (!user) return NextResponse.json({ error: 'Autenticação necessária' }, { status: 401 });
+    if (!user) return withSessionCookies(NextResponse.json({ error: 'Autenticação necessária' }, { status: 401 }));
     if (catalogWrite) {
       const { data } = await db.from('profiles').select('role').eq('id', user.id).single();
-      if (data?.role !== 'ADMIN') return NextResponse.json({ error: 'Acesso restrito' }, { status: 403 });
+      if (data?.role !== 'ADMIN') return withSessionCookies(NextResponse.json({ error: 'Acesso restrito' }, { status: 403 }));
     }
   }
   if (path.startsWith('/admin') || path.startsWith('/conta')) {
     if (!user) {
       const url = new URL('/login', request.url);
       url.searchParams.set('next', path);
-      const redirect = NextResponse.redirect(url);
-      response.cookies.getAll().forEach(c => redirect.cookies.set(c));
-      return redirect;
+      return withSessionCookies(NextResponse.redirect(url));
     }
     if (path.startsWith('/admin')) {
       const { data } = await db.from('profiles').select('role').eq('id', user.id).single();
-      if (data?.role !== 'ADMIN') return NextResponse.redirect(new URL('/conta', request.url));
+      if (data?.role !== 'ADMIN') return withSessionCookies(NextResponse.redirect(new URL('/conta', request.url)));
     }
   }
   return response;

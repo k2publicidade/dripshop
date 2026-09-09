@@ -1,0 +1,746 @@
+{
+  "project": {
+    "name": "DRIPSHOP",
+    "type": "ecommerce_streetwear",
+    "market": "Brasil",
+    "language": "pt-BR",
+    "positioning": "Loja de streetwear com produtos exclusivos e coleções ligadas a artistas da cena brasileira de RAP e FUNK.",
+    "creative_direction": {
+      "style": [
+        "streetwear premium",
+        "editorial",
+        "urbano",
+        "musical",
+        "cultura de rua",
+        "cinematográfico",
+        "minimalista",
+        "alto impacto visual"
+      ],
+      "mood": [
+        "autêntico",
+        "forte",
+        "underground",
+        "contemporâneo",
+        "aspiracional",
+        "exclusivo"
+      ],
+      "design_principles": [
+        "evitar aparência genérica de template",
+        "priorizar fotografia editorial de artistas",
+        "usar tipografia condensada e forte",
+        "manter áreas brancas para respiro",
+        "alternar seções claras e escuras",
+        "reduzir o número de ícones",
+        "evitar caixas excessivas",
+        "não utilizar texturas granuladas artificiais",
+        "evitar contrastes estourados",
+        "evitar fontes com aspecto de pincelada quando o texto precisar de alta legibilidade",
+        "usar elementos manuscritos apenas como detalhe gráfico",
+        "manter hierarquia tipográfica evidente",
+        "priorizar experiência de compra e descoberta de artistas"
+      ]
+    }
+  },
+
+  "brand": {
+    "name": "DRIPSHOP",
+    "logo": {
+      "primary": "DRIPSHOP",
+      "secondary_text": "STREETWEAR | BRASIL",
+      "style": "wordmark condensado preto ou branco",
+      "placement": {
+        "desktop_header": "canto superior esquerdo",
+        "footer": "canto inferior esquerdo"
+      }
+    },
+    "taglines": [
+      "DA RUA PRO MUNDO.",
+      "MODA QUE VEM DA REALIDADE.",
+      "MAIS QUE ROUPA, É CULTURA.",
+      "VISITE O QUE TE MOVE."
+    ]
+  },
+
+  "theme": {
+    "mode": "light_dark_hybrid",
+    "colors": {
+      "black": "#080808",
+      "near_black": "#101010",
+      "charcoal": "#1A1A1A",
+      "dark_gray": "#2B2B2B",
+      "white": "#FFFFFF",
+      "off_white": "#F5F4F1",
+      "light_gray": "#EAEAEA",
+      "medium_gray": "#A4A4A4",
+      "accent_gold": "#C7932F"
+    },
+    "usage": {
+      "primary_background": "#FFFFFF",
+      "dark_sections": "#080808",
+      "primary_text_on_light": "#080808",
+      "primary_text_on_dark": "#FFFFFF",
+      "secondary_text_on_light": "#555555",
+      "secondary_text_on_dark": "#B7B7B7",
+      "accent": "#C7932F"
+    }
+  },
+
+  "typography": {
+    "display": {
+      "style": "condensed_bold",
+      "recommended_fonts": [
+        "Anton",
+        "Bebas Neue",
+        "Archivo Narrow",
+        "Roboto Condensed",
+        "Oswald"
+      ],
+      "usage": [
+        "hero",
+        "section_titles",
+        "artist_names",
+        "campaign_messages"
+      ],
+      "case": "uppercase",
+      "weight": "700-900"
+    },
+    "body": {
+      "recommended_fonts": [
+        "Inter",
+        "Helvetica Neue",
+        "Arial",
+        "Manrope"
+      ],
+      "weight": "400-600",
+      "line_height": "1.35-1.55"
+    },
+    "accent": {
+      "style": "handwritten",
+      "usage": "apenas para frases curtas e elementos visuais",
+      "examples": [
+        "REALIDADE.",
+        "VISITE O QUE TE MOVE.",
+        "DA RUA PRO MUNDO."
+      ]
+    }
+  },
+
+  "layout": {
+    "max_width": "1440px",
+    "desktop_grid": "12_columns",
+    "content_padding": {
+      "desktop": "64px",
+      "tablet": "32px",
+      "mobile": "20px"
+    },
+    "section_spacing": {
+      "desktop": "72px-110px",
+      "mobile": "48px-72px"
+    },
+    "border_radius": {
+      "main": "0px",
+      "product_cards": "0px",
+      "buttons": "0px",
+      "search": "2px"
+    },
+    "visual_behavior": {
+      "composition": "editorial_assymetric",
+      "image_priority": "high",
+      "negative_space": "medium_high",
+      "dividers": "thin",
+      "card_style": "flat",
+      "shadows": "none_or_minimal"
+    }
+  },
+
+  "header": {
+    "type": "desktop_two_level",
+    "background": "#080808",
+    "text_color": "#FFFFFF",
+    "announcement_bar": {
+      "height": "34px",
+      "items": [
+        {
+          "text": "FRETE GRÁTIS EM COMPRAS ACIMA DE R$ 299,00",
+          "alignment": "left"
+        },
+        {
+          "text": "PRODUTOS OFICIAIS E EXCLUSIVOS",
+          "alignment": "center"
+        },
+        {
+          "text": "TROCA FÁCIL",
+          "alignment": "right"
+        }
+      ]
+    },
+    "navigation": {
+      "height": "76px",
+      "logo": {
+        "text": "DRIPSHOP",
+        "subtitle": "STREETWEAR | BRASIL"
+      },
+      "menu": [
+        "LANÇAMENTOS",
+        "ARTISTAS",
+        "ROUPAS",
+        "ACESSÓRIOS",
+        "COLEÇÕES",
+        "OUTLET"
+      ],
+      "search": {
+        "placeholder": "Buscar produtos, artistas...",
+        "width": "250px"
+      },
+      "actions": [
+        "conta",
+        "favoritos",
+        "carrinho"
+      ]
+    }
+  },
+
+  "hero": {
+    "id": "hero_main",
+    "background": "#080808",
+    "height": "600px-680px",
+    "composition": {
+      "main_image_position": "center_right",
+      "text_position": "left",
+      "secondary_graphic_position": "right"
+    },
+    "image": {
+      "subject": "artista masculino brasileiro de RAP/FUNK usando streetwear preto",
+      "style": "fotografia editorial urbana",
+      "environment": "arquitetura de concreto ou cenário urbano",
+      "color_treatment": "preto, cinza, tons quentes discretos",
+      "lighting": "dramática, natural e contrastada"
+    },
+    "copy": {
+      "headline": [
+        "MODA QUE",
+        "VEM DA",
+        "REALIDADE."
+      ],
+      "description": "ROUPA, CULTURA E ATITUDE. PRODUTOS EXCLUSIVOS DOS MAIORES ARTISTAS DO RAP E FUNK.",
+      "cta": {
+        "label": "VER LANÇAMENTOS",
+        "style": "white_filled",
+        "icon": "arrow_right"
+      }
+    },
+    "side_content": {
+      "words": [
+        "ESTILO",
+        "MÚSICA",
+        "IDENTIDADE",
+        "BRASIL"
+      ],
+      "brand_stamp": "DRIPSHOP 2026"
+    }
+  },
+
+  "artists_showcase": {
+    "id": "featured_artists",
+    "layout": "4_column_horizontal",
+    "background": "#080808",
+    "cards": [
+      {
+        "artist": "TZ DA CORONEL",
+        "label": "VER COLEÇÃO",
+        "image_style": "portrait_editorial_dark"
+      },
+      {
+        "artist": "MC LAN",
+        "label": "VER COLEÇÃO",
+        "image_style": "portrait_editorial_dark"
+      },
+      {
+        "artist": "MC POZE DO RODO",
+        "label": "VER COLEÇÃO",
+        "image_style": "portrait_editorial_dark"
+      },
+      {
+        "artist": "OUTROS ARTISTAS",
+        "label": "EXPLORAR",
+        "image_style": "silhouette_or_group_portrait"
+      }
+    ],
+    "card_behavior": {
+      "hover": [
+        "image_zoom_1.04",
+        "dark_overlay_reduction",
+        "arrow_slide"
+      ]
+    }
+  },
+
+  "benefits_bar": {
+    "background": "#101010",
+    "text_color": "#FFFFFF",
+    "layout": "4_columns",
+    "items": [
+      {
+        "title": "PRODUTOS OFICIAIS E EXCLUSIVOS",
+        "icon": "crown"
+      },
+      {
+        "title": "ENTREGA PARA TODO O BRASIL",
+        "icon": "truck"
+      },
+      {
+        "title": "PARCELAMENTO EM ATÉ 6X SEM JUROS",
+        "icon": "credit_card"
+      },
+      {
+        "title": "COMPRA SEGURA E GARANTIDA",
+        "icon": "lock"
+      }
+    ]
+  },
+
+  "launches": {
+    "id": "launches",
+    "background": "#FFFFFF",
+    "header": {
+      "title": "LANÇAMENTOS",
+      "subtitle": "DO ESTÚDIO PRA SUA RUA.",
+      "cta": "VER TODOS"
+    },
+    "layout": "product_carousel",
+    "visible_products_desktop": 5,
+    "products": [
+      {
+        "name": "MOLETOM DRIPSHOP LOGO CLASSIC",
+        "category": "MOLETOM",
+        "price": "R$ 299,90",
+        "installments": "6x de R$ 49,98",
+        "image": "black_hoodie_front",
+        "badge": null
+      },
+      {
+        "name": "CAMISETA POZE DO RODO ARTE OFICIAL",
+        "category": "CAMISETA",
+        "price": "R$ 159,90",
+        "installments": "6x de R$ 26,65",
+        "image": "black_tshirt_artist_print",
+        "badge": null
+      },
+      {
+        "name": "CAMISETA TZ DA CORONEL A RUA ENSINA",
+        "category": "CAMISETA",
+        "price": "R$ 159,90",
+        "installments": "6x de R$ 26,65",
+        "image": "white_tshirt_graphic",
+        "badge": null
+      },
+      {
+        "name": "BONÉ DRIPSHOP PREMIUM",
+        "category": "BONÉ",
+        "price": "R$ 129,90",
+        "installments": "6x de R$ 21,65",
+        "image": "black_cap",
+        "badge": null
+      },
+      {
+        "name": "SHOULDER BAG DRIPSHOP",
+        "category": "ACESSÓRIOS",
+        "price": "R$ 199,90",
+        "installments": "6x de R$ 33,32",
+        "image": "black_shoulder_bag",
+        "badge": null
+      }
+    ],
+    "card": {
+      "background": "#FFFFFF",
+      "image_background": "#EEEEEE",
+      "wishlist_icon": true,
+      "quick_buy": false,
+      "text_alignment": "left"
+    }
+  },
+
+  "collection_campaign": {
+    "id": "official_collections",
+    "type": "full_width_banner",
+    "background": "#080808",
+    "height": "350px-420px",
+    "image": {
+      "subject": "artista de costas diante de público ou show",
+      "position": "center"
+    },
+    "content_left": {
+      "eyebrow": "COLEÇÕES OFICIAIS",
+      "headline": [
+        "MAIS QUE",
+        "ROUPA,",
+        "É CULTURA."
+      ],
+      "cta": "EXPLORAR COLEÇÕES"
+    },
+    "content_right": {
+      "graphic": "coroa",
+      "text": "VISITE O QUE TE MOVE."
+    },
+    "accent_color": "#C7932F"
+  },
+
+  "categories": {
+    "id": "categories",
+    "background": "#FFFFFF",
+    "header": {
+      "title": "CATEGORIAS",
+      "subtitle": "ENCONTRE SEU ESTILO.",
+      "cta": "VER TODAS"
+    },
+    "layout": "6_equal_cards",
+    "cards": [
+      {
+        "name": "CAMISETAS",
+        "image": "streetwear_tshirt"
+      },
+      {
+        "name": "MOLETONS",
+        "image": "black_hoodie"
+      },
+      {
+        "name": "BONÉS",
+        "image": "black_cap"
+      },
+      {
+        "name": "ACESSÓRIOS",
+        "image": "black_shoulder_bag"
+      },
+      {
+        "name": "CALÇAS",
+        "image": "black_cargo_pants"
+      },
+      {
+        "name": "OUTLET",
+        "image": "crown_wall_texture"
+      }
+    ],
+    "card_overlay": "dark_gradient_bottom"
+  },
+
+  "editorial_and_newsletter": {
+    "id": "community",
+    "layout": "60_40_split",
+    "background": "#080808",
+    "left": {
+      "type": "video_feature",
+      "background_image": "artist_group_editorial",
+      "play_button": true,
+      "content": {
+        "title": "DRIPSHOP NA RUA",
+        "description": "Moda, música e realidade. Acompanhe os bastidores, lançamentos e conteúdos exclusivos.",
+        "cta": "ASSISTIR AGORA"
+      }
+    },
+    "right": {
+      "type": "newsletter",
+      "eyebrow": "FAÇA PARTE",
+      "title": "RECEBA NOVIDADES EXCLUSIVAS",
+      "description": "Cadastre seu e-mail e fique por dentro dos próximos lançamentos, coleções e promoções.",
+      "form": {
+        "email_placeholder": "Seu melhor e-mail",
+        "button_icon": "arrow_right",
+        "consent": "Concordo em receber comunicações da DripShop."
+      }
+    }
+  },
+
+  "footer": {
+    "background": "#080808",
+    "text_color": "#FFFFFF",
+    "layout": "5_columns",
+    "brand_column": {
+      "logo": "DRIPSHOP",
+      "subtitle": "STREETWEAR | BRASIL",
+      "tagline": "DA RUA PRO MUNDO.",
+      "socials": [
+        "instagram",
+        "tiktok",
+        "youtube",
+        "spotify"
+      ]
+    },
+    "institutional": {
+      "title": "INSTITUCIONAL",
+      "links": [
+        "Sobre nós",
+        "Política de privacidade",
+        "Trocas e devoluções",
+        "Termos de uso",
+        "Fale conosco"
+      ]
+    },
+    "help": {
+      "title": "AJUDA",
+      "links": [
+        "Meus pedidos",
+        "Entrega",
+        "Pagamento",
+        "Guia de tamanhos",
+        "Central de ajuda"
+      ]
+    },
+    "artists": {
+      "title": "ARTISTAS",
+      "links": [
+        "TZ da Coronel",
+        "MC Lan",
+        "MC Poze do Rodo",
+        "Outros artistas",
+        "Seja um artista"
+      ]
+    },
+    "payment": {
+      "title": "FORMAS DE PAGAMENTO",
+      "methods": [
+        "PIX",
+        "boleto",
+        "Visa",
+        "Mastercard",
+        "Elo"
+      ],
+      "security_message": "SITE 100% SEGURO"
+    },
+    "bottom": {
+      "copyright": "© 2026 DripShop. Todos os direitos reservados.",
+      "signature": "BRASIL É CULTURA."
+    }
+  },
+
+  "components": {
+    "buttons": {
+      "primary_light": {
+        "background": "#FFFFFF",
+        "text": "#080808",
+        "border": "none",
+        "height": "48px",
+        "padding": "0 24px",
+        "font_weight": 700,
+        "text_transform": "uppercase",
+        "icon": "arrow_right"
+      },
+      "primary_dark": {
+        "background": "#080808",
+        "text": "#FFFFFF",
+        "height": "48px",
+        "padding": "0 24px",
+        "font_weight": 700,
+        "text_transform": "uppercase"
+      },
+      "text_link": {
+        "background": "transparent",
+        "text_decoration": "underline_or_arrow",
+        "font_weight": 600
+      }
+    },
+
+    "product_card": {
+      "image_ratio": "4:5",
+      "background": "#FFFFFF",
+      "image_background": "#EEEEEE",
+      "wishlist": true,
+      "title_max_lines": 2,
+      "price_emphasis": "bold",
+      "installment_size": "small"
+    },
+
+    "artist_card": {
+      "image_ratio": "1:1",
+      "overlay": "bottom_dark_gradient",
+      "artist_name": "uppercase_condensed",
+      "cta": "VER COLEÇÃO",
+      "hover_zoom": true
+    }
+  },
+
+  "interactions": {
+    "header": {
+      "sticky": true,
+      "sticky_background": "#080808",
+      "hide_announcement_on_scroll": true
+    },
+    "hero": {
+      "slider": true,
+      "slides": 3,
+      "autoplay": true,
+      "autoplay_interval_ms": 6000
+    },
+    "products": {
+      "carousel": true,
+      "swipe": true,
+      "arrows_desktop": true,
+      "quick_wishlist": true
+    },
+    "animations": {
+      "type": "subtle",
+      "allowed": [
+        "fade_in",
+        "slide_up_12px",
+        "image_zoom_hover",
+        "arrow_translate"
+      ],
+      "avoid": [
+        "excessive_parallax",
+        "bounce",
+        "heavy_3d",
+        "glitch",
+        "random_motion"
+      ]
+    }
+  },
+
+  "responsive": {
+    "desktop": {
+      "breakpoint": ">=1200px",
+      "hero": "full_width",
+      "artists_per_row": 4,
+      "products_per_view": 5,
+      "categories_per_row": 6
+    },
+
+    "tablet": {
+      "breakpoint": "768px-1199px",
+      "menu": "compact",
+      "hero": "image_with_overlay",
+      "artists_per_row": 2,
+      "products_per_view": 3,
+      "categories_per_row": 3,
+      "footer_columns": 3
+    },
+
+    "mobile": {
+      "breakpoint": "<768px",
+      "header": {
+        "height": "72px",
+        "menu": "hamburger",
+        "logo": "center",
+        "actions": [
+          "search",
+          "cart"
+        ]
+      },
+      "hero": {
+        "height": "620px-720px",
+        "layout": "full_bleed_image",
+        "text_overlay": true,
+        "headline_size": "48px-60px",
+        "cta_full_width": false
+      },
+      "artists": {
+        "type": "horizontal_scroll",
+        "card_width": "78vw"
+      },
+      "products": {
+        "type": "horizontal_scroll",
+        "card_width": "72vw"
+      },
+      "categories": {
+        "columns": 2
+      },
+      "editorial_and_newsletter": {
+        "layout": "stacked"
+      },
+      "footer": {
+        "layout": "accordion"
+      }
+    }
+  },
+
+  "seo_content": {
+    "homepage_title": "DripShop | Streetwear oficial de artistas do Rap e Funk",
+    "meta_description": "Streetwear exclusivo inspirado na cultura brasileira. Coleções oficiais de artistas do RAP e FUNK, camisetas, moletons, bonés e acessórios.",
+    "keywords": [
+      "streetwear brasil",
+      "roupa rap",
+      "roupa funk",
+      "merch artistas",
+      "TZ da Coronel",
+      "MC Lan",
+      "MC Poze do Rodo",
+      "camiseta streetwear",
+      "moletom streetwear",
+      "DripShop"
+    ]
+  },
+
+  "accessibility": {
+    "minimum_contrast_ratio": "4.5:1",
+    "minimum_body_font_mobile": "16px",
+    "buttons_min_height": "44px",
+    "keyboard_navigation": true,
+    "visible_focus": true,
+    "alt_text_required": true,
+    "avoid_text_inside_images_when_possible": true
+  },
+
+  "performance": {
+    "hero_image_format": "AVIF/WebP",
+    "product_image_format": "WebP",
+    "lazy_load": true,
+    "preload": [
+      "logo",
+      "hero_first_image",
+      "primary_font"
+    ],
+    "target_lcp": "<2.5s",
+    "target_cls": "<0.1"
+  },
+
+  "content_guidelines": {
+    "tone": [
+      "urbano",
+      "direto",
+      "autêntico",
+      "brasileiro",
+      "premium sem ser elitista"
+    ],
+    "preferred_phrases": [
+      "Da rua pro mundo.",
+      "Mais que roupa, é cultura.",
+      "Moda que vem da realidade.",
+      "Peças exclusivas. Direto da cena.",
+      "Vista o que te move.",
+      "Do estúdio pra sua rua."
+    ],
+    "avoid": [
+      "gírias forçadas",
+      "texto excessivamente publicitário",
+      "termos genéricos de moda",
+      "frases que pareçam geradas automaticamente",
+      "excesso de elementos decorativos"
+    ]
+  },
+
+  "implementation_notes": {
+    "recommended_structure": [
+      "AnnouncementBar",
+      "Header",
+      "Hero",
+      "ArtistShowcase",
+      "BenefitsBar",
+      "ProductCarousel",
+      "CollectionCampaign",
+      "CategoryGrid",
+      "EditorialVideo",
+      "Newsletter",
+      "Footer"
+    ],
+    "recommended_stack": {
+      "frontend": "Next.js / React",
+      "styling": "Tailwind CSS ou CSS Modules",
+      "commerce": "Shopify Storefront API, Nuvemshop API ou backend próprio",
+      "cms": "Sanity, Strapi ou Shopify CMS",
+      "images": "Cloudinary ou Next Image",
+      "analytics": [
+        "Google Analytics 4",
+        "Meta Pixel",
+        "TikTok Pixel"
+      ]
+    }
+  }
+}

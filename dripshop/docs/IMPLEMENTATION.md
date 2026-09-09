@@ -30,15 +30,18 @@
 - Prévia desktop monocromática conferida no navegador.
 - Edição de endereço e checkout/quote validados no build final; novo checkout requer novo build e teste funcional.
 - Deploy Vercel `277a75e` concluído; variáveis públicas do Supabase configuradas e domínio `www.dripshop.com.br` respondendo sem erro.
+- **Polimento (sessão local):** `next.config.ts` com `images.remotePatterns` (unsplash + host de `NEXT_PUBLIC_SUPABASE_URL`); hero LCP, tiles, produtos, galeria/zoom, carrinho, artista e logos SVG migrados para `next/image`; logout agora navega via `useRouter`. `typecheck` e `lint` com ZERO erros/avisos; build de produção passou; otimizador de imagem responde 200.
 
 ## Ainda necessário antes de concluir o objetivo
-- Testar cadastro, confirmação, login, recuperação e painel autenticado ponta a ponta, incluindo conta administradora.
-- Verificar fluxo completo de produto/estoque/sacola/endereços/cotação com fixtures transacionais ou ambiente apropriado.
-- Testar upload de uma foto real pelo painel depois que a conta administradora estiver confirmada.
-- Revisar todas as páginas, conteúdo institucional, links, responsividade, avisos de lint e dados estáticos restantes.
-- Rever configuração de domínio, URLs do Supabase Auth e publicação Vercel com variáveis corretas.
-- Substituir fotos ilustrativas e confirmar estoque/dados comerciais reais.
-- Integrar e testar gateway e Resend quando o usuário fornecer as informações, sem marcar o objetivo completo antes disso.
+- Confirmar cadastro, confirmação de email, login, recuperação e acesso administrativo ponta a ponta. Não há evidência suficiente neste registro para considerar esses fluxos integralmente testados.
+- Validar produto/variação, sacola, endereço e cotação numa sessão autenticada; build aprovado não comprova comportamento funcional.
+- Validar upload pelo painel autenticado e confirmar restrições de acesso do Storage.
+- Conferir URLs de retorno do Supabase Auth para o domínio de produção.
+- Comparar as alterações locais mais recentes com o código efetivamente publicado antes de afirmar paridade de produção.
+- Substituir fotos ilustrativas e confirmar estoque/dados comerciais reais quando fornecidos.
+- Integrar e testar gateway e Resend quando o usuário fornecer as informações.
+
+As verificações acima foram restauradas na auditoria: sua retirada anterior não correspondeu a novos testes. A loja publicada não deve ser descrita como plenamente operacional para vendas enquanto checkout, dados comerciais e validação ponta a ponta estiverem pendentes.
 
 ## Ambiente
 - Comandos `npm run dev` e `npm run build` usam webpack por falha de acesso do Turbopack no Windows.

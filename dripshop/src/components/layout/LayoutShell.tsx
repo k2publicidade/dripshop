@@ -1,6 +1,8 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import type {ContentSection} from '@/lib/content-schema';
+import Sections from '@/components/home/Sections';
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CartDrawer from "@/components/cart/CartDrawer";
@@ -12,7 +14,7 @@ import type { Product } from '@/types';
 const AUTH_ROUTES = ["/login", "/cadastro", "/recuperar-senha", "/redefinir-senha"];
 const ADMIN_ROUTES = ["/admin"];
 
-export default function LayoutShell({ children }: { children: React.ReactNode }) {
+export default function LayoutShell({ children,sections }: { children: React.ReactNode;sections:ContentSection[] }) {
     const pathname = usePathname();
     useEffect(() => {
         let active = true;
@@ -43,9 +45,9 @@ export default function LayoutShell({ children }: { children: React.ReactNode })
 
     return (
         <>
-            <Header />
-            <main className="pt-[80px] lg:pt-[112px] min-h-screen">{children}</main>
-            <Footer />
+            <a className="skip-link" href="#main-content">Pular para o conteúdo</a><Header announcement={sections.find(s=>s.kind==='announcement'&&s.page_path==='/global')}/>
+            <main id="main-content" className="store-main min-h-screen">{pathname!=='/'&&<Sections sections={sections.filter(s=>s.page_path===pathname)}/>} {children}</main>
+            <Footer section={sections.find(s=>s.kind==='footer'&&s.page_path==='/global')}/>
             <CartDrawer />
         </>
     );

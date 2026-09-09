@@ -1,0 +1,3 @@
+'use client';
+import {useEffect,useRef} from 'react';
+export default function Reveal({children,className=''}:{children:React.ReactNode;className?:string}){const ref=useRef<HTMLDivElement>(null);useEffect(()=>{const el=ref.current;if(!el||matchMedia('(prefers-reduced-motion: reduce)').matches)return;const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){el.classList.add('is-revealed');observer.unobserve(el);}})},{threshold:.08});el.classList.add('reveal-ready');observer.observe(el);return()=>observer.disconnect();},[]);return <div ref={ref} className={'scroll-reveal '+className}>{children}</div>;}

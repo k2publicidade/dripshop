@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Eye, EyeOff, ArrowRight, ShoppingBag, Check } from "lucide-react";
@@ -67,11 +68,14 @@ export default function CadastroPage() {
                 </div>
                 <div className="relative z-10">
                     <Link href="/" className="inline-block">
-                        <img
-                            src="/logo.svg"
-                            alt="DRIPSHOP"
-                            className="h-8 w-auto object-contain brightness-0 invert"
-                        />
+                        <Image
+                                                    src="/logo.svg"
+                                                    alt="DRIPSHOP"
+                                                    width={64}
+                                                    height={32}
+                                                    unoptimized
+                                                    className="h-8 w-auto object-contain brightness-0 invert"
+                                                />
                     </Link>
                 </div>
                 <div className="relative z-10 space-y-8">
@@ -104,11 +108,14 @@ export default function CadastroPage() {
                 <div className="w-full max-w-md space-y-8">
                     <div className="lg:hidden text-center mb-8">
                         <Link href="/" className="inline-block">
-                            <img
-                                src="/logo.svg"
-                                alt="DRIPSHOP"
-                                className="h-8 w-auto object-contain mx-auto"
-                            />
+                            <Image
+                                                                                        src="/logo.svg"
+                                                                                        alt="DRIPSHOP"
+                                                                                        width={64}
+                                                                                        height={32}
+                                                                                        unoptimized
+                                                                                        className="h-8 w-auto object-contain mx-auto"
+                                                                                    />
                         </Link>
                     </div>
 
