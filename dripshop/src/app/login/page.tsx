@@ -20,7 +20,12 @@ export default function LoginPage() {
         const success = await login(email, password);
         if (success) {
             const next = new URLSearchParams(window.location.search).get('next');
-            router.push(next && next.startsWith('/') && !next.startsWith('//') ? next : '/conta');
+            const destination = next && next.startsWith('/') && !/[\\\u0000-\u0020]/.test(next)
+                ? new URL(next, window.location.origin)
+                : null;
+            router.push(destination?.origin === window.location.origin
+                ? destination.pathname + destination.search + destination.hash
+                : '/conta');
         } else {
             setError("Email ou senha inválidos. Tente novamente.");
         }
