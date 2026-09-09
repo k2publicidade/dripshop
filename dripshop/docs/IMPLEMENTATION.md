@@ -28,12 +28,17 @@
 - Supabase: migração de Storage aplicada para fotos de produto; política de leitura pública e escrita administrativa.
 - `tests/http-smoke.mjs`: 7 APIs privadas bloqueadas, 3 páginas privadas redirecionadas e 7 páginas públicas disponíveis; catálogo com variações.
 - Prévia desktop monocromática conferida no navegador.
-- Edição de endereço e checkout/quote validados no build final.
+- Edição de endereço e checkout/quote validados no build final; novo checkout requer novo build e teste funcional.
 - Deploy Vercel `277a75e` concluído; variáveis públicas do Supabase configuradas e domínio `www.dripshop.com.br` respondendo sem erro.
 
 ## Ainda necessário antes de concluir o objetivo
-- Substituir fotos ilustrativas e confirmar estoque/dados comerciais reais quando fornecidos.
-- Integrar e testar gateway e Resend quando o usuário fornecer as informações.
+- Testar cadastro, confirmação, login, recuperação e painel autenticado ponta a ponta, incluindo conta administradora.
+- Verificar fluxo completo de produto/estoque/sacola/endereços/cotação com fixtures transacionais ou ambiente apropriado.
+- Testar upload de uma foto real pelo painel depois que a conta administradora estiver confirmada.
+- Revisar todas as páginas, conteúdo institucional, links, responsividade, avisos de lint e dados estáticos restantes.
+- Rever configuração de domínio, URLs do Supabase Auth e publicação Vercel com variáveis corretas.
+- Substituir fotos ilustrativas e confirmar estoque/dados comerciais reais.
+- Integrar e testar gateway e Resend quando o usuário fornecer as informações, sem marcar o objetivo completo antes disso.
 
 ## Ambiente
 - Comandos `npm run dev` e `npm run build` usam webpack por falha de acesso do Turbopack no Windows.
