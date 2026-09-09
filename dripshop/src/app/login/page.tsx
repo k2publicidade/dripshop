@@ -20,6 +20,11 @@ export default function LoginPage() {
         setError("");
         const success = await login(email, password);
         if (success) {
+            if (useAuthStore.getState().user?.role === 'ADMIN') {
+                router.replace('/admin');
+                router.refresh();
+                return;
+            }
             const next = new URLSearchParams(window.location.search).get('next');
             const destination = next && next.startsWith('/') && !/[\\\u0000-\u0020]/.test(next)
                 ? new URL(next, window.location.origin)

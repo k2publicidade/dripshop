@@ -34,9 +34,10 @@ export async function proxy(request: NextRequest) {
       url.searchParams.set('next', path);
       return withSessionCookies(NextResponse.redirect(url));
     }
-    if (path.startsWith('/admin')) {
+    if (path.startsWith('/admin') || path === '/conta') {
       const { data } = await db.from('profiles').select('role').eq('id', user.id).single();
-      if (data?.role !== 'ADMIN') return withSessionCookies(NextResponse.redirect(new URL('/conta', request.url)));
+      if (path === '/conta' && data?.role === 'ADMIN') return withSessionCookies(NextResponse.redirect(new URL('/admin', request.url)));
+      if (path.startsWith('/admin') && data?.role !== 'ADMIN') return withSessionCookies(NextResponse.redirect(new URL('/conta', request.url)));
     }
   }
   return response;
