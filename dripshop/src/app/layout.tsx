@@ -2,6 +2,7 @@ import {getContent} from '@/lib/content';
 import type { Metadata } from "next";
 import "./globals.css";
 import "./street.css";
+import "./appearance.css";
 import LayoutShell from "@/components/layout/LayoutShell";
 
 export const metadata: Metadata = {

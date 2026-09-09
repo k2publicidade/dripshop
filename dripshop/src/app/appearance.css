@@ -1,0 +1,6 @@
+.custom-section[data-background=true] > * {background-color:var(--section-background)!important}
+.street-header a:focus-visible,.street-header button:focus-visible,.store-main a:focus-visible,.store-main button:focus-visible{outline:2px solid currentColor;outline-offset:5px}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.street-category,.artist-card{transition:transform .3s ease,box-shadow .3s ease}.street-category:hover,.artist-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px #00000018}.street-button:active{transform:translateY(1px)}}
+.custom-section[data-text=true] :is(h1,h2,h3,p,.eyebrow,.street-text-link){color:var(--section-text)!important}
+.custom-section[data-button=true] :is(.street-button,.btn-primary,.community-newsletter button){background-color:var(--section-button)!important;border-color:var(--section-button)!important}
+.custom-section[data-button-text=true] :is(.street-button,.btn-primary,.community-newsletter button){color:var(--section-button-text)!important}
